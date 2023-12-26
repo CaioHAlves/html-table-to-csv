@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#app {
+  /* border: 1px solid red; */
+  width: 300px;
+  height: 300px;
+  margin: 10px auto;
+}
+:root {
+  --main-blue: #90caf9;
+  --main-white: #fff;
+  --main-grey: rgba(255, 255, 255, 0.23);
+  --main-dark-grey: #02226a;
+  --main-ease: cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+/* OUTLINED INPUT STYLES */
+
+.outlined-input {
+  position: relative;
+}
+
+.outlined-input input {
+  color: var(--main-dark-grey);
+  height: 4rem;
+  outline: 1px solid var(--main-dark-grey);
+  border-radius: 5px;
+  border: none;
+  background-color: #fff;
+  padding-left: 20px;
+  font-size: 20px;
+  transition: 0.1s var(--main-ease);
+}
+
+.outlined-input label {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  background-color: #fff;
+  color: var(--main-dark-grey);
+  text-align: center;
+  transition: 0.2s var(--main-ease);
+  font-size: 1.5rem;
+  pointer-events: none;
+  padding: 0 5px;
+  z-index: 1000;
+}
+
+.outlined-input input:not(:placeholder-shown) ~ label,
+.outlined-input input:focus ~ label {
+  top: 0px;
+  left: 10px;
+  font-size: 1rem;
+}
+
+.outlined-input input:focus {
+  outline: 1px solid var(--main-dark-grey) !important;
+}
+.outlined-input input:hover {
+  outline: 1px solid var(--main-dark-grey);
+}
+.outlined-input input:focus ~ label {
+  color: var(--main-dark-grey) !important;
+}
